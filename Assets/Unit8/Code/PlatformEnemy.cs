@@ -14,6 +14,8 @@ public class PlatformEnemy : MonoBehaviour
 
     protected Rigidbody2D rb;
 
+    private bool isFollowing = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class PlatformEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, playerPos.position) < distance)
+        if (isFollowing)
         {
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speedEnemy * Time.deltaTime);
         }
@@ -36,12 +38,29 @@ public class PlatformEnemy : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isFollowing = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isFollowing = false;
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
         GameObject otherObj = collisionInfo.gameObject;
 
-        if (otherObj.layer == LayerMask.NameToLayer("Default"))
+        if (otherObj.CompareTag("Player"))
         {
+            // Reverse direction only if collided with the player
             Vector3 scale = transform.localScale;
             scale.x *= -1;
             transform.localScale = scale;

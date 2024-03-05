@@ -127,7 +127,7 @@ public class PlatformPlayerController : MonoBehaviour
                 transform.position.y > otherObj.transform.position.y &&
                 rb.velocity.y < Mathf.Epsilon)
             {
-                //score.AddPoints(otherObj.GetComponent<PlatformEnemy>().points);
+                score.AddPoints(otherObj.GetComponent<PlatformEnemy>().points);
                 Destroy(otherObj);
                 rb.AddRelativeForce(Vector2.up * jumpforce / 2f);
             }
