@@ -41,11 +41,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6995400695365973678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 777f8bf057f781a488d64e4374715889, type: 3}
+  m_Script: {fileID: 11500000, guid: cb51c38f079218042b8568da5784dece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 6751881029347888211, guid: f35775dd45dbba84f827b716b8c9b209, type: 3}
-  startPosition: {fileID: 0}
-  messageText: {fileID: 0}
-  getReadyTime: 0
-  diedMessageTime: 0

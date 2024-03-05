@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class PlatformLevelManager : MonoBehaviour
 {
@@ -15,7 +14,6 @@ public class PlatformLevelManager : MonoBehaviour
 
     [SerializeField] protected GameObject playerPrefab;
     [SerializeField] protected Transform startPosition;
-    [SerializeField] protected TMP_Text messageText;
     [SerializeField] protected float getReadyTime;
     [SerializeField] protected float diedMessageTime;
 
@@ -38,8 +36,6 @@ public class PlatformLevelManager : MonoBehaviour
 
         timer = 0f;
         State = PlatformLevelState.GetReady;
-        messageText.text = "Get Ready!";
-        messageText.enabled = true;
         fader.FadeIn();
     }
 
@@ -67,7 +63,6 @@ public class PlatformLevelManager : MonoBehaviour
             case PlatformLevelState.PlayerDied:
                 if (timer >= diedMessageTime)
                 {
-                    messageText.enabled = false;
                     State = PlatformLevelState.FadeOut;
                 }
                 break;
@@ -94,10 +89,16 @@ public class PlatformLevelManager : MonoBehaviour
 
     public void HandleDeath()
     {
-        messageText.text = "You Died!";
-        messageText.enabled = true;
         timer = 0f;
         State = PlatformLevelState.PlayerDied;
+
+        // Respawn the player at the spawn point
+        cam.followTarget = Instantiate(
+            playerPrefab,
+            startPosition.position,
+            Quaternion.identity
+        );
+        cam.isFollowing = true;
     }
 
     public void LevelFinished()
