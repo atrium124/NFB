@@ -123,17 +123,37 @@ public class PlatformPlayerController : MonoBehaviour
 
         if (otherObj.layer == LayerMask.NameToLayer("Enemy"))
         {
-            if (!otherObj.CompareTag("Projectile") &&
-                transform.position.y > otherObj.transform.position.y &&
-                rb.velocity.y < Mathf.Epsilon)
+            if (otherObj.CompareTag("SideKillEnemy")) // Check if the enemy can be killed by hitting its sides
             {
-                score.AddPoints(otherObj.GetComponent<PlatformEnemy>().points);
-                Destroy(otherObj);
-                rb.AddRelativeForce(Vector2.up * jumpforce / 2f);
+                // Calculate the direction of collision
+                Vector2 direction = otherObj.transform.position - transform.position;
+
+                // Check if the collision occurs on the sides
+                if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+                {
+                    score.AddPoints(otherObj.GetComponent<PlatformEnemy>().points);
+                    Destroy(otherObj);
+                    rb.AddRelativeForce(Vector2.up * jumpforce / 2f);
+                }
+                else
+                {
+                    Die();
+                }
             }
-            else
+            else // Handle enemies that can be killed by jumping on top
             {
-                Die();
+                if (!otherObj.CompareTag("Projectile") &&
+                    transform.position.y > otherObj.transform.position.y &&
+                    rb.velocity.y < Mathf.Epsilon)
+                {
+                    score.AddPoints(otherObj.GetComponent<PlatformEnemy>().points);
+                    Destroy(otherObj);
+                    rb.AddRelativeForce(Vector2.up * jumpforce / 2f);
+                }
+                else
+                {
+                    Die();
+                }
             }
         }
     }

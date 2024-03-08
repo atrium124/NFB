@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runforce: 25
-  jumpforce: 500
+  jumpforce: 1000
   winSwitch: {fileID: 0}
 --- !u!114 &5605531930641701994
 MonoBehaviour:
