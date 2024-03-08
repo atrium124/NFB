@@ -103,12 +103,7 @@ public class PlatformPlayerController : MonoBehaviour
     {
         GameObject otherObj = other.gameObject;
 
-        if (otherObj.layer == LayerMask.NameToLayer("Switch") && otherObj.CompareTag("Item"))
-        {
-            score.AddCoin();
-            Destroy(otherObj);
-        }
-        else if (otherObj.layer == LayerMask.NameToLayer("Enemy"))
+       if (otherObj.layer == LayerMask.NameToLayer("Enemy"))
         {
             Debug.Log("You Died!");
             score.AddDeath();

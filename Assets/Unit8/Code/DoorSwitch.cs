@@ -26,7 +26,7 @@ public class DoorSwitch : MonoBehaviour
     {
         GameObject otherObj = other.gameObject;
 
-        if (!otherObj.CompareTag("Projectile"))
+        if (!otherObj.CompareTag("Player"))
         {
             IsActive = true;
             sr.color = activeColor;

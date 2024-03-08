@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 55621091344613037}
   - component: {fileID: 55621091344613036}
   - component: {fileID: 55621091344613032}
+  - component: {fileID: -2620503105510384151}
   m_Layer: 11
   m_Name: Duckenemy
   m_TagString: Untagged
@@ -28,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55621091344613039}
   m_LocalRotation: {x: -0, y: -0, z: -0.0025811484, w: -0.9999967}
-  m_LocalPosition: {x: 12.4565, y: -0.9905, z: 0}
-  m_LocalScale: {x: 1.7878284, y: 1.7825266, z: 1}
+  m_LocalPosition: {x: 12.8146, y: -0.5728, z: 0}
+  m_LocalScale: {x: 2.9134452, y: 3.0821667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3349475429731244976}
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -73803550, guid: 981f94864b7924f438f48e2ba9d86b13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -151,6 +152,27 @@ MonoBehaviour:
   PlatformPlayer: {fileID: 6523891858612869569, guid: 740ee99c186139d4994ff0ab87f945b6, type: 3}
   distance: 25
   speedEnemy: 5
+--- !u!95 &-2620503105510384151
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55621091344613039}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e9fa9237e38b4c07bc105bb2bccb194, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3349475429731244977
 GameObject:
   m_ObjectHideFlags: 0

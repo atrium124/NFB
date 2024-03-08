@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runforce: 25
   jumpforce: 1000
-  winSwitch: {fileID: 0}
+  winSwitch: {fileID: 6930982247944111095, guid: d13713209cc516343988bf25eb448db0, type: 3}
 --- !u!114 &5605531930641701994
 MonoBehaviour:
   m_ObjectHideFlags: 0

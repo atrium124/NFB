@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 755844979176617170}
   - component: {fileID: 755844979176617165}
   - component: {fileID: 755844979176617168}
-  - component: {fileID: 755844979176617171}
+  - component: {fileID: 1206753455747281420}
   m_Layer: 12
-  m_Name: winSwitch
+  m_Name: SceneChanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &755844979176617171
+--- !u!114 &1206753455747281420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 755844979176617164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b176c67c285a58842bd4ecbc78e1fbfd, type: 3}
+  m_Script: {fileID: 11500000, guid: bc5baf135ed41934281017c26af8a405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeColor: {r: 0, g: 0, b: 0, a: 0}
