@@ -7396,6 +7396,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1206753455747281420, guid: 9666144532f8c0a489151e89440a5108, type: 3}
+      propertyPath: index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206753455747281420, guid: 9666144532f8c0a489151e89440a5108, type: 3}
       propertyPath: levelName
       value: EndScene
       objectReference: {fileID: 0}
