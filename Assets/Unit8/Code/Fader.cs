@@ -26,10 +26,6 @@ public class Fader : MonoBehaviour
     {
         Image = GetComponent<Image>();
 
-        fadeColor = Image.color;
-        fadeColor.a = 1f;
-        Image.color = fadeColor;
-
         State = FaderState.AllOut;
     }
 
@@ -63,8 +59,6 @@ public class Fader : MonoBehaviour
                 fadeColor.a = fadeTimer / fadeTime;
             }
         }
-
-        Image.color = fadeColor;
     }
 
     public void FadeIn()
